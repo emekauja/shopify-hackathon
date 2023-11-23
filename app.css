@@ -1,0 +1,187 @@
+/* base reset  ********************* */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+img {
+		max-width: 100%;
+}
+ 
+/* 
+		breakpoints 
+			mobile: 43.75rem
+			tablets: 62rem
+*/
+
+/* Variables ********************* */
+:root {
+	--body-font: "Inter", sans-serif;
+	--theme-bg: #F1F1F1;
+	--white-bg: #ffffff;
+	--body-color: #ffffff;
+	--c-grey-50: #656266;
+	--c-grey-100: #B5B5B5;
+	--c-grey-200: #303030;
+	--c-grey-300: #1A1A1A;
+
+	--font-light: #E3E3E3;
+	--font-lights: #DBDBDB;
+	--font-mid: #616161;
+	--font-dark: #303030;
+
+	--c-stroke-light: #EBEBEB;
+	--c-stroke-mid: #E1E1E1;
+	--c-stroke-dark: #616161;
+
+	--border-color: var(--c-grey-200);
+
+}
+
+/* Typography ********************* */
+
+/* html {
+	font-size: 62.5%;
+} */
+
+body {
+	font-family: --body-font;
+	color: var(--font-dark);
+	font-size: 0.813rem;
+	font-weight: 400;
+	line-height: 1.4;
+	letter-spacing: 0;
+}
+
+h1 {
+	font-size: 14vw;
+	display: block;
+	text-align: center;
+	font-weight: lighter;
+	line-height: 1;
+
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+
+p {
+	display: block;
+}
+
+em {
+	font-style: italic;
+}
+
+strong {
+	font-weight: 700;
+}
+
+a {
+	color: inherit;
+	position: relative;
+}
+
+/* Shared ********************* */
+
+.font-md {
+	font-size: 0.813rem;
+	font-weight: 500;
+	line-height: 1.138rem;
+}
+
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: var(--c-grey-300);
+	padding: 0.75rem 1rem;
+}
+
+.logo .expand {
+	@media screen and (max-width: 43.75rem) {
+		display: none;
+	}
+}
+
+.logo .collapse {
+	@media screen and (min-width: 43.75em) { 
+		display: none;
+	}
+}
+
+.search-bar {
+ height: 2rem;
+	width: 100%;
+	max-width: 30rem;
+}
+
+.search-bar input {
+	width: 100%;
+	height: 100%;
+	color: var(--c-grey-100);
+	padding: 0.5rem 0.5rem 0.5rem 1.75rem;
+	border-radius: 0.5rem;
+	border: 1px solid var(--c-stroke-dark);
+	background-color: var(--c-grey-200);
+	background-repeat: no-repeat;
+	background-position: 1%;
+	background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMSAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMi44MjI2IDEzLjM4MzNDMTEuODk5NiAxNC4wODQxIDEwLjc0ODQgMTQuNSA5LjUgMTQuNUM2LjQ2MjQzIDE0LjUgNCAxMi4wMzc2IDQgOUM0IDUuOTYyNDMgNi40NjI0MyAzLjUgOS41IDMuNUMxMi41Mzc2IDMuNSAxNSA1Ljk2MjQzIDE1IDlDMTUgMTAuMjQ4NCAxNC41ODQxIDExLjM5OTYgMTMuODgzMyAxMi4zMjI2TDE2Ljc4MDMgMTUuMjE5N0MxNy4wNzMyIDE1LjUxMjYgMTcuMDczMiAxNS45ODc0IDE2Ljc4MDMgMTYuMjgwM0MxNi40ODc0IDE2LjU3MzIgMTYuMDEyNiAxNi41NzMyIDE1LjcxOTcgMTYuMjgwM0wxMi44MjI2IDEzLjM4MzNaTTEzLjUgOUMxMy41IDExLjIwOTEgMTEuNzA5MSAxMyA5LjUgMTNDNy4yOTA4NiAxMyA1LjUgMTEuMjA5MSA1LjUgOUM1LjUgNi43OTA4NiA3LjI5MDg2IDUgOS41IDVDMTEuNzA5MSA1IDEzLjUgNi43OTA4NiAxMy41IDlaIiBmaWxsPSIjQjVCNUI1Ii8+Cjwvc3ZnPgo=");
+	
+	/* <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12.8226 13.3833C11.8996 14.0841 10.7484 14.5 9.5 14.5C6.46243 14.5 4 12.0376 4 9C4 5.96243 6.46243 3.5 9.5 3.5C12.5376 3.5 15 5.96243 15 9C15 10.2484 14.5841 11.3996 13.8833 12.3226L16.7803 15.2197C17.0732 15.5126 17.0732 15.9874 16.7803 16.2803C16.4874 16.5732 16.0126 16.5732 15.7197 16.2803L12.8226 13.3833ZM13.5 9C13.5 11.2091 11.7091 13 9.5 13C7.29086 13 5.5 11.2091 5.5 9C5.5 6.79086 7.29086 5 9.5 5C11.7091 5 13.5 6.79086 13.5 9Z" fill="#B5B5B5"/>
+</svg> */
+
+}
+
+.search-bar input:hover {
+	border-color: var(--c-stroke-mid);
+}
+
+.search-bar input::placeholder {
+		color: var(--c-grey-100)
+}
+
+.search-bar input:focus, .search-bar input:active {
+		background-color: var(--c-grey-200);
+		border-color: var(--white-bg);
+		border-width: 2px;
+}
+
+.search-bar input:focus-visible {
+	 outline: none;
+}
+
